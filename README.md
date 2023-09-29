@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+<!-- # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -24,4 +24,14 @@ If you are developing a production application, we recommend updating the config
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list -->
+
+// App Functionality:
+
+// todo: Find a solution for saving the data
+// todo: display previously saved list
+//? todo: find a solution for data storage (What type of database will you be using?)
+
+// todo: user login system, and user storage system.
+// todo: be able to sort the list alphabetically or neumerically
+// todo: make the app organizable with an edit button and able to click and drag the list to re-order the items.
