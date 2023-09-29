@@ -1,37 +1,23 @@
-<!-- # React + TypeScript + Vite
+Welcome to "typescript-todo-list"! this is an open source full-stack project that is a To-do List application that can create user accounts, create and edit to-do lists.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## todo: Phase One { }
 
-Currently, two official plugins are available:
+   - basic design and functionality
+   > add new items ✅
+   > clear input box after adding ✅
+   > fire notification after adding ✅
+   - add a remove item from list button
+   - able to sort the list alphabetically or numerically
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## todo: Phase Two { }
 
-## Expanding the ESLint configuration
+   - find a solution for data storage (what type of database will you be using?)
+   - possibly consider using mongoDB and express? (Node.js Tutus)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## todo: Phase Three { }
 
-- Configure the top-level `parserOptions` property like this:
+   - user login system, and user storage system.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## todo: Phase Four { }
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list -->
-
-// App Functionality:
-
-// todo: Find a solution for saving the data
-// todo: display previously saved list
-//? todo: find a solution for data storage (What type of database will you be using?)
-
-// todo: user login system, and user storage system.
-// todo: be able to sort the list alphabetically or neumerically
-// todo: make the app organizable with an edit button and able to click and drag the list to re-order the items.
+   - make the app organizable with an edit button and able to click and drag the list to re-order the items.
