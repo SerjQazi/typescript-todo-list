@@ -10,7 +10,7 @@ const Context = React.createContext({
 
 interface todoItem {
   id: number;
-  text: string;
+  text: any;
   completed: boolean;
 }
 
@@ -25,9 +25,24 @@ export const TodoList: React.FC = () => {
     { id: 4, text: 'Drink Coffee!', completed: false },
   ]);
 
+  const [newTask, setNewTask] = useState<string>('');
+
+  const addItem = () => {
+    if (newTask !== '') {
+      const newTodo: todoItem = {
+        id: Date.now(),
+        text: newTask,
+        completed: false,
+      };
+      setTodos([...todos, newTodo]);
+      openNotification('topRight');
+      setNewTask(''); // Reset the newTask state to an empty string
+    }
+  };
+
   const openNotification = (placement: NotificationPlacement) => {
     api.info({
-      message: `Saved: Your item was successfully added to the list!`,
+      message: `Saved: New item added to the list!`,
       description: (
         <Context.Consumer>{({ name }) => `Hello, ${name}!`}</Context.Consumer>
       ),
@@ -41,10 +56,10 @@ export const TodoList: React.FC = () => {
         if (todoList.id === id) {
           return { ...todoList, completed: !todoList.completed };
         }
-        return todoList
+        return todoList;
       })
-    )
-  }
+    );
+  };
 
   return (
     <div className="h-screen">
@@ -59,6 +74,8 @@ export const TodoList: React.FC = () => {
             <Input
               className="mt-6 mb-4 text-base p-3"
               placeholder="Add an item to your list !"
+              value={newTask}
+              onChange={(event) => setNewTask(event.currentTarget.value)}
             />
           </div>
 
@@ -74,7 +91,7 @@ export const TodoList: React.FC = () => {
 
             <Button
               className="ml-10 tracking-widest"
-              onClick={() => openNotification('topRight')}
+              onClick={() => addItem()}
               size="large"
             >
               Add Task
@@ -85,8 +102,16 @@ export const TodoList: React.FC = () => {
         <div className="flex justify-center">
           <ul className="w-11/12 lg:w-10/12">
             {todos.map((data) => (
-              <div onClick={() => completeTask(data.id)} className={data.completed ? 'hover:scale-[1.015] cursor-pointer border-2 border-slate-200 mb-2 px-2 py-3 shadow-sm rounded-lg line-through transition-all delay-100' : 'hover:scale-[1.015] cursor-pointer border-2 border-slate-200 mb-2 px-2 py-3 shadow-sm rounded-lg transition-all delay-100'}>
-                <li key={data.id}>{data.text}</li>
+              <div
+                key={data.id}
+                onClick={() => completeTask(data.id)}
+                className={
+                  data.completed
+                    ? 'hover:scale-[1.015] cursor-pointer border-2 border-slate-200 mb-2 px-2 py-3 shadow-sm rounded-lg line-through transition-all delay-100'
+                    : 'hover:scale-[1.015] cursor-pointer border-2 border-slate-200 mb-2 px-2 py-3 shadow-sm rounded-lg transition-all delay-100'
+                }
+              >
+                <li>{data.text}</li>
               </div>
             ))}
           </ul>
